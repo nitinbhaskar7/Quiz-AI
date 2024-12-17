@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './extra.css'
 const page = () => {
   return (
-    <div>
+    <div className='bg'>
 
       <section className="one">
         <main className='font-sans'>
