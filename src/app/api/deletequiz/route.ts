@@ -3,8 +3,10 @@ import Question from "@/models/question.collection";
 import Option from "@/models/option.collection";
 import { NextRequest, NextResponse } from "next/server";
 import mongoose from "mongoose";
-export async function DELETE(request : NextRequest) {
+import { dbConnect } from "@/helper/dbConnect";
+export async function POST(request : NextRequest) {
     try {
+        dbConnect();
         const { quizid  } : {quizid : string} = await request.json();
         const res = await Quiz.findByIdAndDelete(quizid) ;
         if(!res){

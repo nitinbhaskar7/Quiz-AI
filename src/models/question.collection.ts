@@ -21,6 +21,10 @@ const QuestionSchema = new Schema({
         ref: "Option",
         // required: true,
     },
+    explaination : {
+        type : String ,
+        required : false 
+    }
 },
 {
     timestamps: true,

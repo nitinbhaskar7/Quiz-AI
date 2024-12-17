@@ -1,8 +1,10 @@
 import Quiz from "@/models/quiz.collection";
 import { NextRequest, NextResponse } from "next/server";
 import mongoose from "mongoose";
+import { dbConnect } from "@/helper/dbConnect";
 export async function POST(request : NextRequest) {
     try {
+      dbConnect();
         const { quizid  } : {quizid : string} = await request.json();
         const res = await Quiz.aggregate([
             {
@@ -28,7 +30,13 @@ export async function POST(request : NextRequest) {
               }
             }
           ])
-              
+        if(res.length == 0){
+            return NextResponse.json({
+                message : "Quiz not found"
+            } , {
+                status : 404
+            })
+        }
         //   )
         return NextResponse.json({
             message : "Quiz fetched successfully",

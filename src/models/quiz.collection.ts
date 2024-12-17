@@ -28,9 +28,17 @@ const QuizSchema = new Schema({
             },
             score: {
                 type: Number,
-            }
+            },
+            selectedOptionIds: [{
+                type: Schema.Types.ObjectId,
+                ref: "Option",
+            }],
         }
-    ]
+    ],
+    viewResults: {
+        type: Boolean,
+        default: false,
+    },
 },
 {
     timestamps: true,

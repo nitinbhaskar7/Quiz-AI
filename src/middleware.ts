@@ -6,9 +6,9 @@ import { authOptions } from './app/api/auth/[...nextauth]/route'
 export async function middleware(request: NextRequest) {
 
     const token = await getToken({req : request})
-  const protectedRoutes = ['/profile' , '/quiz' , '/dashboard'] 
+  const protectedRoutes = ['/profile' , '/quiz' , '/dashboard' , '/generatequiz']  
   const publicRoutes = ['/login']
-    if(protectedRoutes.includes(request.nextUrl.pathname) && !token){
+    if((protectedRoutes.includes(request.nextUrl.pathname) || request.nextUrl.pathname.startsWith('/quiz')) && !token){
         return NextResponse.redirect(new URL('/login' , request.url).toString())
     }
     if(publicRoutes.includes(request.nextUrl.pathname) && token){
@@ -19,5 +19,5 @@ export async function middleware(request: NextRequest) {
  
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: ['/login' , '/profile' , '/quiz' , '/dashboard'] ,
+  matcher: ['/login' , '/profile' , '/quiz/:path*' , '/dashboard' , '/generatequiz'] ,
 }
