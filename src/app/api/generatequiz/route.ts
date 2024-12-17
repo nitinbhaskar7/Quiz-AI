@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
                 }
             )
         }
-        const response = await axios.post("http://localhost:3000/api/questiongen", {
+        const response = await axios.post("/api/questiongen", {
             grade: grade,
             subject: subject,
             chapter: chapter
