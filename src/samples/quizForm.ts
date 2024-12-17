@@ -6,7 +6,7 @@ export const subjects = [
 
 
 
-export const chapters = {
+export const chapters : any = {
 
    "physics" :  {
         "class 5": [

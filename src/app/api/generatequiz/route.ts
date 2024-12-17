@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
                 }
             )
         }
-        const response = await axios.post("/api/questiongen", {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}/api/questiongen`, {
             grade: grade,
             subject: subject,
             chapter: chapter
