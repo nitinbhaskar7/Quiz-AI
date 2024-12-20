@@ -4,7 +4,7 @@ const OptionSchema = new Schema({
     questionId: {
         type: Schema.Types.ObjectId,
         ref: "Question",
-        required: true,
+        // required: true,
     },
     quizId: {
         type: Schema.Types.ObjectId,
