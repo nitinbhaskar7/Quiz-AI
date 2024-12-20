@@ -10,10 +10,7 @@ export async function POST(request: NextRequest) {
     try {
         const { grade, subject, chapter, email , response} = await request.json();
         dbConnect();
-        console.log(response);
         const res = response.questions;
-        console.log("YOOYOY")
-        console.log(res);
         //    my res is an array of questions 
         // each question contains a question , options , correct answer, TODO : explainations 
         //  we will save this in the database under questions collection , options collection 
