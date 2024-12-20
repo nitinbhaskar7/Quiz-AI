@@ -33,7 +33,7 @@ export async function POST(request : NextRequest){
       //  ).describe("The array of MCQs generated from the given input");
       
       const structuredLlm = model.withStructuredOutput(quiz , {name : "quiz" });
-      const arr = `Generate 10 difficult MCQs from ${grade} grade ${subject} subject ${chapter} chapter`;
+      const arr = `Generate 10 difficult including a few out of the box MCQs from ${grade} grade ${subject} subject ${chapter} chapter`;
       console.log(arr);
       const res = await structuredLlm.invoke(arr);
       

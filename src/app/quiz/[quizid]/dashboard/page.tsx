@@ -50,7 +50,7 @@ const page = () => {
         }).then((res) => {
             setresultsToggle(res.data.viewResults)
         }).catch((error) => {
-            router.push('/not-found')
+            // router.push('/not-found')
             console.log(error)
         })
 

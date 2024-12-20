@@ -51,7 +51,7 @@ const page = () => {
   }
   return (
     <div className="p-4 max-w-3xl mx-auto dark:bg-gray-800 dark:text-white">
-      <form onSubmit={(e)=>{handleSubmit(e)}} className="p-4 border rounded-lg shadow-sm dark:border-gray-700">
+      <form onSubmit={(e)=>{handleSubmit(e)}}  className="p-4 border rounded-lg shadow-sm dark:border-gray-700">
         <h1 className="text-2xl font-bold mb-2">{title}</h1>
         {
           questions.map((question : any,index : number) => (
@@ -72,9 +72,9 @@ const page = () => {
           ))
         }
         {
-          !error && <Button type="submit" >Submit</Button>
+          <Button type="submit" disabled={res.includes(null)}>Submit</Button>
         }
-        {error && <p className="text-red-500 dark:text-red-400">{error}</p>}
+       
       </form>
     </div>
   )

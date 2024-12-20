@@ -29,56 +29,9 @@ export async function POST(request: NextRequest) {
             chapter: chapter
             });
         console.log(response.data);
-        const res = response.data.questions;
-        //    my res is an array of questions 
-        // each question contains a question , options , correct answer, TODO : explainations 
-        //  we will save this in the database under questions collection , options collection 
-        //  and quiz collection
-        const questionIds : any = [];
-        const newQuiz = await Quiz.create({
-            questions: questionIds,
-            title: ` ${grade} ${subject} ${chapter} Quiz - ${new Date().toLocaleDateString()}`,
-            createdBy : user._id
-        })
-        for (let i = 0; i < res.length; i++) {
-            const questionInfo = res[i];
-            const optionIds : any= [];
-            let correctOption = 0;
-            const newQuestion = await Question.create({
-                question: questionInfo.question,
-                options: optionIds,
-                // correctOption: correctOption,
-                quizId : newQuiz._id
-            })
-            for (let j = 0; j < questionInfo.options.length; j++) {
-                const optionContent = questionInfo.options[j];
-                const newOption = await Option.create({
-                    content: optionContent,
-                    questionId : newQuestion._id,
-                    quizId : newQuiz._id
-                })
-                if (j == questionInfo.correctOption) {
-                    correctOption = newOption._id;
-                }
-                optionIds.push(newOption._id);
-            }
-             await Question.findByIdAndUpdate(newQuestion._id,{
-                question: questionInfo.question,
-                options: optionIds,
-                correctOption: correctOption,
-                quiz : newQuiz._id,
-                explaination : questionInfo.explaination
-            })
-            questionIds.push(newQuestion._id);
-        }
-
-        await Quiz.findByIdAndUpdate(newQuiz._id , {
-            questions: questionIds,
-
-        })
         return NextResponse.json({
             message: "Quiz created successfully",
-            quizId : newQuiz._id
+            quiz: response.data
         }, {status: 200});
 
     } catch (error: any) {

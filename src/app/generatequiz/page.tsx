@@ -43,11 +43,19 @@ const page = () => {
     }
     try {
       setloading(true)
-      const res = await axios.post('/api/generatequiz', {
+      const response = await axios.post('/api/generatequiz', {
         grade,
         subject,
         chapter,
         email: session?.user?.email
+      }) 
+      console.log(response.data.quiz)
+      const res = await axios.post('/api/savequiz', {
+        grade,
+        subject,
+        chapter,
+        email: session?.user?.email,
+        response : response.data.quiz
       }
       )
       console.log(res.data)
