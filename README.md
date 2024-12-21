@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quiz DTL
 
-## Getting Started
+Welcome to the Quiz DTL website! This platform allows users to take quizzes on various topics, test their knowledge, and track their progress. Whether you're a student looking to study or just someone who enjoys testing their trivia skills, Quiz DTL has something for everyone.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- **User  -Friendly Interface**: Easy navigation and a clean design for a seamless quiz-taking experience.
+- **Variety of Quizzes**: A wide range of topics to choose from, catering to different interests and knowledge levels.
+- **Progress Tracking**: Users can track their scores and progress over time.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+
+## Technologies Used
+
+- **HTML**: For the structure of the web pages.
+- **CSS**: For styling and layout.
+- **JavaScript**: For interactive elements and quiz functionality.
+- **React**: For building the user interface.
+- **Netlify**: For hosting the website.
+
+## Installation
+
+To run Quiz DTL locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/quiz-dtl.git
+   ```
+
+2. Navigate to the project directory :
+  ```bash
+  cd quiz-dtl
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Install the dependencies :
+  ```bash
+  npm i
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Start the development server : 
+  ```bash
+  npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
