@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 
         // Create a new quiz
         const newQuiz = await Quiz.create({
-            title: `${grade} ${subject} ${chapter} Quiz - ${new Date().toLocaleDateString()}`,
+            title: `${grade || "Self Generated Quiz"} ${subject || "" } ${chapter || ""} Quiz - ${new Date().toLocaleDateString()}`,
             createdBy: user._id,
             questions: [] // Placeholder for question IDs
         });

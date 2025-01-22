@@ -3,7 +3,6 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { signOut, useSession } from 'next-auth/react'
 import { Button } from './ui/button'
-import { ModeToggle } from './ui/mode-toggle'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -12,6 +11,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
+  import { ModeToggle } from './ui/mode-toggle'
   
 const Navbar = () => {
     const router = useRouter();

@@ -76,7 +76,7 @@ export const chapters : any = {
       "Synthetic Fibres and Plastics",
       "Materials: Metals and Non-Metals",
       "Coal and Petroleum",
-      "Combustion and Flame",
+      "Nanochemistry",
       "Pollution of Air and Water"
     ],
     "class 9": [
