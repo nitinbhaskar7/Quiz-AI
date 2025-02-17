@@ -2,6 +2,10 @@
 
 Welcome to the Quiz DTL website! This platform allows users to take quizzes on various topics, test their knowledge, and track their progress. Whether you're a student looking to study or just someone who enjoys testing their trivia skills, Quiz DTL has something for everyone.
 
+## Authors:
+Nitin Bhaskar
+Partha Suresh
+
 ## Table of Contents
 
 - [Features](#features)
